@@ -172,6 +172,7 @@ namespace Managers
             UpgradesManager.GreatEyes = 1;
             MainShopManager.Instance.BuyGreatEyes();
             QuestManager.Instance.AddValueToQuest(QuestManager.Quest.QuestType.Unlock_Great_Eyes, 1);
+            MainShopManager.Instance.UpdateTextFields();
         }
 
         public static void BuyFoodFinding()
@@ -179,13 +180,14 @@ namespace Managers
             UpgradesManager.FoodFinding = 1;
             FieldManager.Instance.UpgradeFoodFinding();
             QuestManager.Instance.AddValueToQuest(QuestManager.Quest.QuestType.Unlock_Food_Finding, 1);
+            MainShopManager.Instance.UpdateTextFields();
         }
-
 
         public static void BuySteelStomach()
         {
             UpgradesManager.SteelStomach = 1;
             FieldManager.Instance.UpgradeSteelStomach();
+            MainShopManager.Instance.UpdateTextFields();
         }
 
 
@@ -193,6 +195,7 @@ namespace Managers
         {
             BoostManager.AdrenalineGlands += 1;
             FieldManager.Instance.UpgradeBoostSpeed();
+            MainShopManager.Instance.UpdateTextFields();
         }
 
 
@@ -200,6 +203,7 @@ namespace Managers
         {
             BoostManager.FastMetabolism += 1;
             FieldManager.Instance.UpgradeBoostMetabolism();
+            MainShopManager.Instance.UpdateTextFields();
         }
 
 
@@ -209,6 +213,7 @@ namespace Managers
             AnalyticManager.Field_Expand();
             UIManager.Instance.changeShopEvent += FieldManager.Instance.ShowPopup;
             QuestManager.Instance.AddValueToQuest(QuestManager.Quest.QuestType.Unlock_Pathfinding, 1);
+            MainShopManager.Instance.UpdateTextFields();
         }
 
 
@@ -216,6 +221,7 @@ namespace Managers
         {
             UpgradesManager.StrongMuscles += 1;
             FieldManager.Instance.UpgradeStrongMuscles(UpgradesManager.StrongMuscles);
+            MainShopManager.Instance.UpdateTextFields();
         }
     }
 

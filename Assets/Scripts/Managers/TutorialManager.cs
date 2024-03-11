@@ -14,6 +14,9 @@ namespace Managers
         [SerializeField]
         private GameObject _tutorialEvolveHand;
 
+        [SerializeField] private GameObject _background;
+        [SerializeField] private GameObject _mask;
+
         private bool _isHandShowPrefs
         {
             get => PlayerPrefs.GetInt("IsTutorialHandShow", 0)==1;
@@ -40,6 +43,8 @@ namespace Managers
             _isHandBoostShow = _isHandBoostShowPrefs;
             _isHandEvolveShow = _isHandEvolveShowPrefs;
             _tutorialHand.SetActive(!_isHandShow);
+            _background.SetActive(!_isHandShow);
+            _mask.SetActive(!_isHandShow);
         }
 
         public void HideHand()
@@ -48,6 +53,8 @@ namespace Managers
             _isHandShow = true;
             _isHandShowPrefs = _isHandShow;
             _tutorialHand.SetActive(false);
+            _background.SetActive(false);
+            _mask.SetActive(false);
         }
 
         public void ShowBoostHand()

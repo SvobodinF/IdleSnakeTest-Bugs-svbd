@@ -203,6 +203,7 @@ namespace Managers
                 _appleList.Remove(foundApple);
                 Debug.Log($"Removed apple! Apple list count :{_appleList.Count}");
                 UIManager.Instance.UpdateFoodValue($"{_appleList.Count}/{Mathf.Floor(_appleMax - 1)}");
+                Debug.Log(_pointForFood);
                 LevelGrowManager.EatApple(
                     (int)((foundApple.point * LevelGrowManager.baseGrowForFood +
                             LevelGrowManager.upGrowForFood * _pointForFood) *
@@ -215,7 +216,7 @@ namespace Managers
             _cellSnake.RemoveAt(_cellSnake.Count - 1);
         }
 
-        private void SpawnRandomApple()
+        public void SpawnRandomApple()
         {
             if (_appleList.Count >= Mathf.Floor(_appleMax - 1)) return;
             Vector2Int id = new Vector2Int(Random.Range(0, _fieldSize), Random.Range(0, _fieldSize));
